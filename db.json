@@ -1,0 +1,16 @@
+{
+  "articles": [
+    {
+      "title": "Learn ReactJS With Redux",
+      "content": "React js and redux",
+      "active": true,
+      "id": 1
+    },
+    {
+      "title": "Learn Angular 11",
+      "content": "Learn how to created frontend",
+      "active": true,
+      "id": 2
+    }
+  ]
+}

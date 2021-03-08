@@ -1,0 +1,37 @@
+
+<div class="row mt-3">
+    <div class="col-md-6 my-3">
+        <h1>List of Posts</h1>
+    </div>
+    <div class="col-md-6 my-3 text-right">
+        <a routerLink="/articles/add" class="btn btn-sm btn-warning">
+            <i class="fa fa-plus"></i> Add
+        </a>
+    </div>
+</div>
+
+<div class="row my-2">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let article of listArticles">
+                    <td scope="row">{{ article.title }}</td>
+                    <td>{{ article.content }}</td>
+                    <td class="text-right" nowrap>
+                        <a href="" class="btn btn-sm btn-info mr-1"><i class="fa fa-eye"></i></a>
+                        <a href="" class="btn btn-sm btn-danger mr-1"><i class="fa fa-pencil"></i></a>
+                        <button class="btn btn-sm btn-dark"><i class="fa fa-trash"></i></button>
+                    </td>
+                </tr>
+               
+            </tbody>
+        </table>
+    </div>
+</div>
