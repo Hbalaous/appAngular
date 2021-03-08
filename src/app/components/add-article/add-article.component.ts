@@ -10,7 +10,10 @@ import { Router } from '@angular/router';
 })
 export class AddArticleComponent implements OnInit {
 
-  myArticle: Article;
+  myArticle: Article = {
+    title: '',
+    content: ''
+  };
   constructor(private articleService: ArticleService, private router: Router) { }
 
   ngOnInit(): void {

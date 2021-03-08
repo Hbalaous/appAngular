@@ -1,1 +1,14 @@
-<p>show-article works!</p>
+
+<div class="row mt-3">
+    <div class="col-md-6 my-3">
+        <h1>{{ article.title }}</h1>
+    </div>
+    <div class="col-md-6 my-3 text-right">
+        <a routerLink="/articles" class="btn btn-link">
+            <i class="fa fa-backward"></i>
+            Back to List
+        </a>
+    </div>
+</div>
+<hr>
+<p>{{ article.content }}</p>
