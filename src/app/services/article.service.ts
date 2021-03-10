@@ -23,4 +23,8 @@ export class ArticleService {
   persist(data: Article) {
     return this.http.post<Article>(this.urlApi, data);
   }
+
+  update(id: number, data: Article){
+    return this.http.put(`${this.urlApi}/${id}`,data)
+  }
 }
