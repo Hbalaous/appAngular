@@ -1,3 +1,4 @@
+import { AuthComponent } from './components/auth/auth.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ShowArticleComponent } from './components/show-article/show-article.component';
 import { EditArticleComponent } from './components/edit-article/edit-article.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'articles/add', component: AddArticleComponent },
   { path: 'articles/:id/edit', component: EditArticleComponent },
   { path: 'articles/:id', component: ShowArticleComponent },
+  { path: 'auth', component: AuthComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 

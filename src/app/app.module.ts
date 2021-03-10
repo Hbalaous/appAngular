@@ -11,6 +11,7 @@ import { EditArticleComponent } from './components/edit-article/edit-article.com
 import { ShowArticleComponent } from './components/show-article/show-article.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { NavbarComponent } from './components/partials/navbar/navbar.component';
+import { AuthComponent } from './components/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NavbarComponent } from './components/partials/navbar/navbar.component';
     EditArticleComponent,
     ShowArticleComponent,
     PageNotFoundComponent,
-    NavbarComponent
+    NavbarComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
