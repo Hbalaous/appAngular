@@ -8,14 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  userIsAuthenticated = null;
+  email = '';
+  isAuthenticated = false
 
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.authService.userData.subscribe(user => {
-      this.userIsAuthenticated = user
-      console.log('is authenticated', this.userIsAuthenticated)
+    this.authService.userData.subscribe(data => {
+      
+      if(data) {
+         let { user, isAuthenticated } = data
+   
+         let { email } = user;
+         this.email = email;
+         this.isAuthenticated = isAuthenticated
+       }else {
+        this.email = '';
+        this.isAuthenticated = false
+       }
     })
   }
 

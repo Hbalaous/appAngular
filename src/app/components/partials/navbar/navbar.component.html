@@ -6,7 +6,7 @@
            <span class="navbar-toggler-icon"></span>
        </button>
        <div class="collapse navbar-collapse" id="collapsibleNavId">
-           <ul class="navbar-nav mr-auto mt-2 mt-lg-0" *ngIf="userIsAuthenticated">
+           <ul class="navbar-nav mr-auto mt-2 mt-lg-0" *ngIf="isAuthenticated">
                <li 
                routerLinkActive="active" 
                [routerLinkActiveOptions]="{exact: true}"
@@ -20,12 +20,15 @@
            </ul>
 
            <ul class="navbar-nav ml-auto">
-               <li class="nav-item" *ngIf="!userIsAuthenticated">
+               <li class="nav-item" *ngIf="!isAuthenticated">
                    <a class="nav-link" routerLink="/auth">Connexion</a>
                </li>
-               <li class="nav-item" *ngIf="userIsAuthenticated">
+               <li class="nav-item" *ngIf="isAuthenticated">
+                <button class="nav-link btn-logout">{{ email }}</button>
+              </li>
+               <li class="nav-item" *ngIf="isAuthenticated">
                 <button (click)="signOut()" class="nav-link btn-logout">Logout</button>
-            </li>
+              </li>
            </ul>
          
        </div>

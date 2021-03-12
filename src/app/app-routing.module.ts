@@ -1,3 +1,4 @@
+import { HomeArticleComponent } from './components/home-article/home-article.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ShowArticleComponent } from './components/show-article/show-article.component';
@@ -11,10 +12,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   
   { path: '', redirectTo: '/articles', pathMatch: 'full' },
-  { path: 'articles', component: ListArticlesComponent },
-  { path: 'articles/add', component: AddArticleComponent },
-  { path: 'articles/:id/edit', component: EditArticleComponent },
-  { path: 'articles/:id', component: ShowArticleComponent },
+  {path: 'articles', loadChildren: () => import ('./marticle/marticle.module').then(m => m.MarticleModule)},
   { path: 'auth', component: AuthComponent },
   { path: '**', component: PageNotFoundComponent },
 ];

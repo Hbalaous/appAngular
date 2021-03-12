@@ -3,9 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Article } from '../models/article';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ArticleService {
 
   urlApi = `${environment.domainName}/articles`

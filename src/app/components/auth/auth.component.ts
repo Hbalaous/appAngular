@@ -36,7 +36,7 @@ export class AuthComponent implements OnInit {
     }
     else{
       this.authService.signIn(data)
-          .subscribe((response: any) => this.router.navigate(['/articles']))
+          .subscribe((response: any) => console.log('auth'))
     }
   }
 

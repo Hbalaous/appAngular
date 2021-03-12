@@ -23,8 +23,15 @@ export class AuthService {
     return this.http.post("https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCF__i6TqaKywvAcT56yRkyXKHK-Reh170", credential)
                .pipe(
                  tap(data => {
-                    localStorage.setItem('userData', JSON.stringify(data))
-                    this.userData.next(data)
+                   let myData = {
+                     user: {
+                       ...data
+                     },
+                     isAuthenticated: true
+                    }
+                    this.userData.next(myData)
+                    console.log('telio : ', myData)
+                    localStorage.setItem('userData', JSON.stringify(myData))
                   })
                )
   }
