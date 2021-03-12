@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AuthService } from './../../services/auth.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
@@ -12,7 +13,7 @@ export class AuthComponent implements OnInit {
   authForm: FormGroup;
   switch = true;
 
-  constructor(private authService: AuthService) { 
+  constructor(private authService: AuthService, private router: Router) { 
     this.authForm = new FormGroup({
       email: new FormControl(null),
       password: new FormControl(null)
@@ -35,7 +36,7 @@ export class AuthComponent implements OnInit {
     }
     else{
       this.authService.signIn(data)
-          .subscribe((response: any) => localStorage.setItem('token', response.idToken))
+          .subscribe((response: any) => this.router.navigate(['/articles']))
     }
   }
 
